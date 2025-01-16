@@ -17,10 +17,12 @@ DEFAULT_DATASET = os.getenv("DEFAULT_DATASET")
 MAX_RESULTS = os.getenv("MAX_RESULTS") or 10
 
 if SERVICE_ACCOUNT_JSON is None:
-    raise ValueError("SERVICE_ACCOUNT_JSON is not set in the environment variables.")
+    raise ValueError(
+        "SERVICE_ACCOUNT_JSON is not set in the environment variables.")
 
 if DEFAULT_DATASET is None:
-    raise ValueError("DEFAULT_DATASET is not set in the environment variables.")
+    raise ValueError(
+        "DEFAULT_DATASET is not set in the environment variables.")
 
 
 def query_bigquery(sql_query: str):
@@ -70,12 +72,3 @@ def query_bigquery(sql_query: str):
 
     except Exception as e:
         print(f"An error occurred: {e}")
-
-
-# Example Usage
-if __name__ == "__main__":
-    sample_query = """
-    SELECT * 
-    FROM orders
-    """
-    query_bigquery(sample_query)
