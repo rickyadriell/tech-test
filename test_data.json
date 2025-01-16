@@ -173,7 +173,7 @@
                     }
                 ]
             },
-            "expected_result": "SELECT COUNT(order_id) AS count_of_orders FROM orders WHERE status = 'Complete' AND gender = 'F' GROUP BY num_of_item"
+            "expected_result": "SELECT COUNT(order_id) AS count_of_orders FROM orders WHERE status = 'Complete' AND gender = 'F'"
         },
         {
             "query_text": "Show me the orders with value over $1000",

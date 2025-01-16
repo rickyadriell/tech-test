@@ -53,18 +53,12 @@ First 10 Rows:
 +-------------------+
 
  query_bigquery 6: Show me the number of complete orders made by women
-Total Rows: 4
+Total Rows: 1
 First 10 Rows:
 +-------------------+
 |   count_of_orders |
 +===================+
-|             10889 |
-+-------------------+
-|              3125 |
-+-------------------+
-|               801 |
-+-------------------+
-|               757 |
+|             15572 |
 +-------------------+
 
  query_bigquery 7: Show me the orders with value over $1000
