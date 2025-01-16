@@ -1,0 +1,310 @@
+{
+    "test_data": [
+        {
+            "query_text": "Get total number of orders",
+            "query": {
+                "metrics": [
+                    "order_count"
+                ]
+            },
+            "semantic_layer": {
+                "metrics": [
+                    {
+                        "name": "order_count",
+                        "sql": "COUNT(*)",
+                        "table": "orders"
+                    }
+                ]
+            },
+            "expected_result": "SELECT COUNT(*) AS order_count FROM orders"
+        },
+        {
+            "query_text": "Give me the total sales revenue",
+            "query": {
+                "metrics": [
+                    "total_revenue"
+                ]
+            },
+            "semantic_layer": {
+                "metrics": [
+                    {
+                        "name": "total_revenue",
+                        "sql": "SUM(sale_price)",
+                        "table": "order_items"
+                    }
+                ]
+            },
+            "expected_result": "SELECT SUM(sale_price) AS total_revenue FROM order_items"
+        },
+        {
+            "query_text": "Give me sales revenue by order item status",
+            "query": {
+                "metrics": [
+                    "total_revenue"
+                ],
+                "dimensions": [
+                    "status"
+                ]
+            },
+            "semantic_layer": {
+                "metrics": [
+                    {
+                        "name": "total_revenue",
+                        "sql": "SUM(sale_price)",
+                        "table": "order_items"
+                    }
+                ],
+                "dimensions": [
+                    {
+                        "name": "status",
+                        "sql": "status",
+                        "table": "order_items"
+                    }
+                ]
+            },
+            "expected_result": "SELECT SUM(sale_price) AS total_revenue, status FROM order_items GROUP BY status"
+        },
+        {
+            "query_text": "Show me the sales revenue for order items with status complete",
+            "query": {
+                "metrics": [
+                    "total_revenue"
+                ],
+                "filters": [
+                    {
+                        "field": "status",
+                        "operator": "=",
+                        "value": "Complete"
+                    }
+                ]
+            },
+            "semantic_layer": {
+                "metrics": [
+                    {
+                        "name": "total_revenue",
+                        "sql": "SUM(sale_price)",
+                        "table": "order_items"
+                    }
+                ],
+                "dimensions": [
+                    {
+                        "name": "status",
+                        "sql": "status",
+                        "table": "order_items"
+                    }
+                ]
+            },
+            "expected_result": "SELECT SUM(sale_price) AS total_revenue FROM order_items WHERE status = 'Complete'"
+        },
+        {
+            "query_text": "Show me the number of orders with more than 1 items",
+            "query": {
+                "metrics": [
+                    "count_of_orders"
+                ],
+                "filters": [
+                    {
+                        "field": "num_of_item",
+                        "operator": ">",
+                        "value": 1
+                    }
+                ]
+            },
+            "semantic_layer": {
+                "metrics": [
+                    {
+                        "name": "count_of_orders",
+                        "sql": "COUNT(order_id)",
+                        "table": "orders"
+                    }
+                ],
+                "dimensions": [
+                    {
+                        "name": "num_of_item",
+                        "sql": "num_of_item",
+                        "table": "orders"
+                    }
+                ]
+            },
+            "expected_result": "SELECT COUNT(order_id) AS count_of_orders FROM orders WHERE num_of_item > 1"
+        },
+        {
+            "query_text": "Show me the number of complete orders made by women",
+            "query": {
+                "metrics": [
+                    "count_of_orders"
+                ],
+                "filters": [
+                    {
+                        "field": "status",
+                        "operator": "=",
+                        "value": "Complete"
+                    },
+                    {
+                        "field": "gender",
+                        "operator": "=",
+                        "value": "F"
+                    }
+                ]
+            },
+            "semantic_layer": {
+                "metrics": [
+                    {
+                        "name": "count_of_orders",
+                        "sql": "COUNT(order_id)",
+                        "table": "orders"
+                    }
+                ],
+                "dimensions": [
+                    {
+                        "name": "num_of_item",
+                        "sql": "num_of_item",
+                        "table": "orders"
+                    },
+                    {
+                        "name": "gender",
+                        "sql": "gender",
+                        "table": "orders"
+                    },
+                    {
+                        "name": "status",
+                        "sql": "status",
+                        "table": "orders"
+                    }
+                ]
+            },
+            "expected_result": "SELECT COUNT(order_id) AS count_of_orders FROM orders WHERE status = 'Complete' AND gender = 'F' GROUP BY num_of_item"
+        },
+        {
+            "query_text": "Show me the orders with value over $1000",
+            "query": {
+                "metrics": [
+                    "total_revenue"
+                ],
+                "dimensions": [
+                    "order_id"
+                ],
+                "filters": [
+                    {
+                        "field": "total_revenue",
+                        "operator": ">",
+                        "value": 1000
+                    }
+                ]
+            },
+            "semantic_layer": {
+                "metrics": [
+                    {
+                        "name": "total_revenue",
+                        "sql": "SUM(sale_price)",
+                        "table": "order_items"
+                    }
+                ],
+                "dimensions": [
+                    {
+                        "name": "order_id",
+                        "sql": "order_id",
+                        "table": "order_items"
+                    }
+                ]
+            },
+            "expected_result": "SELECT SUM(sale_price) AS total_revenue, order_id FROM order_items GROUP BY order_id HAVING total_revenue > 1000"
+        },
+        {
+            "query_text": "Show me order details for orders over $1000 in value",
+            "query": {
+                "metrics": [
+                    "total_revenue"
+                ],
+                "dimensions": [
+                    "order_id",
+                    "gender",
+                    "status"
+                ],
+                "filters": [
+                    {
+                        "field": "total_revenue",
+                        "operator": ">",
+                        "value": 1000
+                    }
+                ]
+            },
+            "semantic_layer": {
+                "metrics": [
+                    {
+                        "name": "total_revenue",
+                        "sql": "SUM(sale_price)",
+                        "table": "order_items"
+                    }
+                ],
+                "dimensions": [
+                    {
+                        "name": "order_id",
+                        "sql": "order_id",
+                        "table": "order_items"
+                    },
+                    {
+                        "name": "gender",
+                        "sql": "gender",
+                        "table": "orders"
+                    },
+                    {
+                        "name": "status",
+                        "sql": "status",
+                        "table": "orders"
+                    }
+                ],
+                "joins": [
+                    {
+                        "one": "orders",
+                        "many": "order_items",
+                        "join": "order_items.order_id = orders.order_id"
+                    }
+                ]
+            },
+            "expected_result": "SELECT SUM(sale_price) AS total_revenue, order_items.order_id, orders.gender, orders.status FROM order_items JOIN orders ON order_items.order_id = orders.order_id GROUP BY order_items.order_id, orders.gender, orders.status HAVING total_revenue > 1000"
+        },
+        {
+            "query_text": "Show me weekly sales revenue since the start of 2024",
+            "query": {
+                "metrics": [
+                    "total_revenue"
+                ],
+                "dimensions": [
+                    "ordered_date__week"
+                ],
+                "filters": [
+                    {
+                        "field": "ordered_date",
+                        "operator": ">=",
+                        "value": "2024-01-01"
+                    }
+                ]
+            },
+            "semantic_layer": {
+                "metrics": [
+                    {
+                        "name": "total_revenue",
+                        "sql": "SUM(sale_price)",
+                        "table": "order_items"
+                    }
+                ],
+                "dimensions": [
+                    {
+                        "name": "ordered_date",
+                        "sql": "created_at",
+                        "table": "orders"
+                    }
+                ],
+                "joins": [
+                    {
+                        "one": "orders",
+                        "many": "order_items",
+                        "join": "order_items.order_id = orders.order_id"
+                    }
+                ]
+            },
+            "expected_result": "SELECT SUM(sale_price) AS total_revenue, DATE_TRUNC(orders.created_at, WEEK) AS ordered_date__week FROM order_items JOIN orders ON order_items.order_id = orders.order_id WHERE orders.created_at >= '2024-01-01' GROUP BY ordered_date__week ORDER BY ordered_date__week ASC"
+        }
+    ]
+}
