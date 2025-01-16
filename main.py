@@ -33,6 +33,18 @@ def test_generate_sql():
             print(f"Actual  : {result}")
 
 
+def get_actual_query_results_based_on_test_data():
+    for index, text_data in enumerate(load_test_data()):
+        print(f"\nExecuting Test {index + 1}: {text_data['query_text']}")
+        query = text_data['query']
+        semantic_layer = text_data['semantic_layer']
+        expected_result = text_data['expected_result']
+        result = generate_sql(query, semantic_layer)
+        query_bigquery(result)
+
+
 # Example Usage
 if __name__ == "__main__":
     test_generate_sql()
+    # get_actual_query_results_based_on_test_data()
+    # get_query_results_based_on_test_data()
