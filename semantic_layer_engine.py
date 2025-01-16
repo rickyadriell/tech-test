@@ -38,7 +38,17 @@ class SemanticLayer(TypedDict):
 
 
 class SQLQueryBuilder:
+    """
+    A class to build SQL queries based on a given query and semantic layer.
+    """
+
     def __init__(self, query: Query, semantic_layer: SemanticLayer):
+        """
+        Initialize the SQLQueryBuilder with a query and semantic layer.
+
+        :param query: The query definition containing metrics, dimensions, and filters.
+        :param semantic_layer: The semantic layer definition containing metrics, dimensions, and joins.
+        """
         self.query = query
         self.semantic_layer = semantic_layer
         self.select_clauses = []
@@ -50,18 +60,33 @@ class SQLQueryBuilder:
         self.order_by_clauses = []
 
     def find_metric(self, name: str) -> Optional[Metric]:
+        """
+        Find a metric definition by name.
+
+        :param name: The name of the metric to find.
+        :return: The metric definition if found, otherwise None.
+        """
         for metric in self.semantic_layer["metrics"]:
             if metric["name"] == name:
                 return metric
         return None
 
     def find_dimension(self, name: str) -> Optional[Dimension]:
+        """
+        Find a dimension definition by name.
+
+        :param name: The name of the dimension to find.
+        :return: The dimension definition if found, otherwise None.
+        """
         for dimension in self.semantic_layer["dimensions"]:
             if dimension["name"] == name or dimension["name"].startswith("ordered_date"):
                 return dimension
         return None
 
     def build_select(self):
+        """
+        Build the SELECT clause of the SQL query.
+        """
         for metric in self.query.get("metrics", []):
             metric_def = self.find_metric(metric)
             if metric_def is not None:
@@ -88,6 +113,9 @@ class SQLQueryBuilder:
                         self.group_by_clauses.append(dimension_def["sql"])
 
     def build_where(self):
+        """
+        Build the WHERE and HAVING clause of the SQL query.
+        """
         for filter in self.query.get("filters", []):
             field = filter["field"]
             operator = filter["operator"]
@@ -115,10 +143,18 @@ class SQLQueryBuilder:
                         f'{metric_field} {operator} \'{value}\'')
 
     def build_joins(self):
+        """
+        Build the JOIN clauses of the SQL query.
+        """
         for join in self.semantic_layer.get("joins", []):
             self.join_clauses.append(f'JOIN {join["one"]} ON {join["join"]}')
 
     def build_sql(self) -> str:
+        """
+        Build the complete SQL query.
+
+        :return: The generated SQL query as a string.
+        """
         self.build_select()
         self.build_where()
         self.build_joins()
@@ -139,6 +175,14 @@ class SQLQueryBuilder:
 
 
 def generate_sql(query: Query, semantic_layer: SemanticLayer) -> str:
+    """
+    Generate an SQL query based on a given query and semantic layer.
+
+    :param query: The query definition containing metrics, dimensions, and filters.
+    :param semantic_layer: The semantic layer definition containing metrics, dimensions, and joins.
+    :return: The generated SQL query as a string.
+    :raises ValueError: If there is an error generating the SQL query.
+    """
     try:
         builder = SQLQueryBuilder(query, semantic_layer)
         return builder.build_sql()
