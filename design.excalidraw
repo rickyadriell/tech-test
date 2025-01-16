@@ -1,0 +1,462 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "https://marketplace.visualstudio.com/items?itemName=pomdtr.excalidraw-editor",
+  "elements": [
+    {
+      "id": "msYkgXKYG-rZDmGg8BKNH",
+      "type": "rectangle",
+      "x": -18.57977130421,
+      "y": 356.184134812197,
+      "width": 1387.5919264520771,
+      "height": 893.5509474772672,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": {
+        "type": 3
+      },
+      "seed": 767808825,
+      "version": 417,
+      "versionNonce": 925183321,
+      "isDeleted": false,
+      "boundElements": [
+        {
+          "type": "text",
+          "id": "dbxCtPptgq7NOEETQrxJs"
+        }
+      ],
+      "updated": 1737054342976,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "dbxCtPptgq7NOEETQrxJs",
+      "type": "text",
+      "x": -13.579771304209999,
+      "y": 645.4596085508306,
+      "width": 1339.16357421875,
+      "height": 315,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 1773311575,
+      "version": 808,
+      "versionNonce": 70737433,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1737054918812,
+      "link": null,
+      "locked": false,
+      "text": "1. Understand the requiremenst - write a function thats converts a query \nJSON and a semantic Layer definition into a BigQuery SQL query\n2. Decide what programming language to use and setup.\n3. Create a test (TDD) - create a test based on the given query and \nsemantic layer.\n4. Construct the SQL Buider and functions\n",
+      "fontSize": 36,
+      "fontFamily": 1,
+      "textAlign": "left",
+      "verticalAlign": "middle",
+      "baseline": 302,
+      "containerId": "msYkgXKYG-rZDmGg8BKNH",
+      "originalText": "1. Understand the requiremenst - write a function thats converts a query JSON and a semantic Layer definition into a BigQuery SQL query\n2. Decide what programming language to use and setup.\n3. Create a test (TDD) - create a test based on the given query and semantic layer.\n4. Construct the SQL Buider and functions\n",
+      "lineHeight": 1.25
+    },
+    {
+      "id": "hyD9koa9TePEOKk4CNUhc",
+      "type": "rectangle",
+      "x": 3203.641981477504,
+      "y": 246.65650160276505,
+      "width": 1092.3807420748126,
+      "height": 771.1086669191856,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": {
+        "type": 3
+      },
+      "seed": 1986553689,
+      "version": 661,
+      "versionNonce": 1249163639,
+      "isDeleted": false,
+      "boundElements": [
+        {
+          "type": "text",
+          "id": "gHii7dvyKQ6sl4yH26nYR"
+        }
+      ],
+      "updated": 1737054194812,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "gHii7dvyKQ6sl4yH26nYR",
+      "type": "text",
+      "x": 3208.641981477504,
+      "y": 351.4108350623579,
+      "width": 907.03125,
+      "height": 561.5999999999999,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 1062476537,
+      "version": 751,
+      "versionNonce": 1332149625,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1737054194813,
+      "link": null,
+      "locked": false,
+      "text": "SELECT\n\n\n    SUM(sale_price) AS total_revenue,status\n\n \nFROM\n \n    order_items \n\nGROUP BY \n\n    status",
+      "fontSize": 36,
+      "fontFamily": 3,
+      "textAlign": "left",
+      "verticalAlign": "middle",
+      "baseline": 553,
+      "containerId": "hyD9koa9TePEOKk4CNUhc",
+      "originalText": "SELECT\n\n\n    SUM(sale_price) AS total_revenue,status\n\n \nFROM\n \n    order_items \n\nGROUP BY \n\n    status",
+      "lineHeight": 1.2
+    },
+    {
+      "id": "67V8Ml49ZLr0QRJz56U88",
+      "type": "rectangle",
+      "x": 1824.33213573367,
+      "y": 257.8122027953525,
+      "width": 1244.283169667964,
+      "height": 1220,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": {
+        "type": 3
+      },
+      "seed": 1258116407,
+      "version": 269,
+      "versionNonce": 1826407927,
+      "isDeleted": false,
+      "boundElements": [
+        {
+          "type": "text",
+          "id": "4HuKoP_Fn4msxnqoHxGdi"
+        }
+      ],
+      "updated": 1737054194813,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "4HuKoP_Fn4msxnqoHxGdi",
+      "type": "text",
+      "x": 1829.33213573367,
+      "y": 263.01220279535255,
+      "width": 1160.15625,
+      "height": 1209.6,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 847565849,
+      "version": 265,
+      "versionNonce": 1890842873,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1737054194813,
+      "link": null,
+      "locked": false,
+      "text": "{\n    \"query_text\": \"Give me sales revenue by order item \nstatus\",\n    \"query\": {\n        \"metrics\": [\n            \"total_revenue\"\n        ],\n        \"dimensions\": [\n            \"status\"\n        ]\n    },\n    \"semantic_layer\": {\n        \"metrics\": [\n            {\n                \"name\": \"total_revenue\",\n                \"sql\": \"SUM(sale_price)\",\n                \"table\": \"order_items\"\n            }\n        ],\n        \"dimensions\": [\n            {\n                \"name\": \"status\",\n                \"sql\": \"status\",\n                \"table\": \"order_items\"\n            }\n        ]\n    },\n},",
+      "fontSize": 36,
+      "fontFamily": 3,
+      "textAlign": "left",
+      "verticalAlign": "middle",
+      "baseline": 1201,
+      "containerId": "67V8Ml49ZLr0QRJz56U88",
+      "originalText": "{\n    \"query_text\": \"Give me sales revenue by order item status\",\n    \"query\": {\n        \"metrics\": [\n            \"total_revenue\"\n        ],\n        \"dimensions\": [\n            \"status\"\n        ]\n    },\n    \"semantic_layer\": {\n        \"metrics\": [\n            {\n                \"name\": \"total_revenue\",\n                \"sql\": \"SUM(sale_price)\",\n                \"table\": \"order_items\"\n            }\n        ],\n        \"dimensions\": [\n            {\n                \"name\": \"status\",\n                \"sql\": \"status\",\n                \"table\": \"order_items\"\n            }\n        ]\n    },\n},",
+      "lineHeight": 1.2
+    },
+    {
+      "id": "RFbeIEuNMx0iqwh1wGOnD",
+      "type": "arrow",
+      "x": 2446.746429844995,
+      "y": 500.48674139382393,
+      "width": 1437.8443867277801,
+      "height": 286.814095113482,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": {
+        "type": 2
+      },
+      "seed": 1145689399,
+      "version": 733,
+      "versionNonce": 1308554295,
+      "isDeleted": false,
+      "boundElements": [],
+      "updated": 1737054194813,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          644.2439358051874,
+          -286.814095113482
+        ],
+        [
+          1437.8443867277801,
+          -62.05972588548747
+        ]
+      ],
+      "lastCommittedPoint": null,
+      "startBinding": null,
+      "endBinding": null,
+      "startArrowhead": null,
+      "endArrowhead": "arrow"
+    },
+    {
+      "id": "okyx1067I6cHiQCC8Ka9X",
+      "type": "arrow",
+      "x": 2370.3254181097004,
+      "y": 630.2542192058461,
+      "width": 1664.789072147988,
+      "height": 434.17249288096554,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": {
+        "type": 2
+      },
+      "seed": 1649181529,
+      "version": 503,
+      "versionNonce": 1889621335,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1737054194813,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1165.7793059506648,
+          -434.17249288096554
+        ],
+        [
+          1664.789072147988,
+          -155.92114356267547
+        ]
+      ],
+      "lastCommittedPoint": null,
+      "startBinding": null,
+      "endBinding": null,
+      "startArrowhead": null,
+      "endArrowhead": "arrow"
+    },
+    {
+      "id": "Eay5zOHmrK2AHhMbNbkuq",
+      "type": "arrow",
+      "x": 2674.754625375359,
+      "y": 1230.1847811096748,
+      "width": 1016.0361723751473,
+      "height": 543.6862752947222,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": {
+        "type": 2
+      },
+      "seed": 361529017,
+      "version": 849,
+      "versionNonce": 333000727,
+      "isDeleted": false,
+      "boundElements": [],
+      "updated": 1737054252833,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          -0.6618548431550924,
+          54.66727910948407
+        ],
+        [
+          1015.3743175319922,
+          82.34734006646022
+        ],
+        [
+          842.3960309048165,
+          -461.338935228262
+        ]
+      ],
+      "lastCommittedPoint": null,
+      "startBinding": null,
+      "endBinding": null,
+      "startArrowhead": null,
+      "endArrowhead": "arrow"
+    },
+    {
+      "id": "33vm5_N0UVX0DB8LWzKvE",
+      "type": "arrow",
+      "x": 2577.2997044660724,
+      "y": 1199.8160761932966,
+      "width": 758.4306225430187,
+      "height": 281.333173418044,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": {
+        "type": 2
+      },
+      "seed": 220675513,
+      "version": 113,
+      "versionNonce": 41009081,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1737054265407,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          638.9956490252844,
+          -34.68096832011088
+        ],
+        [
+          758.4306225430187,
+          -281.333173418044
+        ]
+      ],
+      "lastCommittedPoint": null,
+      "startBinding": null,
+      "endBinding": null,
+      "startArrowhead": null,
+      "endArrowhead": "arrow"
+    },
+    {
+      "id": "QjbPXFhom1mBVYqAf72Nk",
+      "type": "arrow",
+      "x": 2710.248139372703,
+      "y": 939.4043522554048,
+      "width": 571.6004440620231,
+      "height": 415.5322851721396,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": {
+        "type": 2
+      },
+      "seed": 1113805175,
+      "version": 128,
+      "versionNonce": 1030587479,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1737054282213,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          230.3149579890487,
+          -268.0014904269833
+        ],
+        [
+          571.6004440620231,
+          -415.5322851721396
+        ]
+      ],
+      "lastCommittedPoint": null,
+      "startBinding": null,
+      "endBinding": null,
+      "startArrowhead": null,
+      "endArrowhead": "arrow"
+    }
+  ],
+  "appState": {
+    "gridSize": null,
+    "viewBackgroundColor": "#ffffff"
+  },
+  "files": {}
+}
